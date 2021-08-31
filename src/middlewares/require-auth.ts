@@ -8,7 +8,7 @@ export const requireAuth = (req: Request, res: Response, next: NextFunction) => 
     const token = req.headers.token as string;
 
     if(!token)
-        return next();
+        throw new NotAuthorizedError();
 
     try {
         const payload = jwt.verify(token, 'secretKeyxd') as UserPayload;
