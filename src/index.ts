@@ -18,3 +18,4 @@ export * from './events/user-created-event';
 export * from './events/user-updated-event';
 
 export * from './models/user';
+export * from './models/product';
