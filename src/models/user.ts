@@ -3,7 +3,6 @@ import { Password } from '../services/password';
 
 //Interface for the properties that are required to create a new customer
 interface UserAttrs {
-    id: string;
     nombre: string;
     apellido: string;
     foto?: string;
