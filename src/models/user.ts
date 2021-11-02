@@ -23,6 +23,7 @@ interface UserrDoc extends mongoose.Document {
     apellido: string;
     foto?: string;
     correo: string;
+    password: string;
     tipo: string;
     tarjetas: [ 
         { titular: string; 
@@ -48,6 +49,10 @@ const userSchema = new mongoose.Schema({
     },
     foto: String,
     correo: {
+        type: String,
+        required: true
+    },
+    password: {
         type: String,
         required: true
     },
