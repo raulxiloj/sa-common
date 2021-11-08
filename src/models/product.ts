@@ -18,7 +18,6 @@ interface ProductDoc extends mongoose.Document {
     foto: string;
     precio: number;
     stock: number;
-    categorias: [];
 }
 
 //Interface  for the properties that a product model has
@@ -55,6 +54,7 @@ const productSchema = new mongoose.Schema({
     toJSON: {
         transform(doc, ret){
             ret.id = ret._id;
+            ret.categorias = [];
             delete ret._id;
             delete ret.password;
             delete ret.__v;
