@@ -8,6 +8,7 @@ interface ProductAttrs {
     foto: string;
     precio: number;
     stock: number;
+    categorias: Array<string>;
 }
 
 //Interface for the properties that a ProductModel Document has
@@ -50,7 +51,12 @@ const productSchema = new mongoose.Schema({
     stock: {
         type: Number,
         required: true
-    }
+    },
+    categorias: [
+        {
+            type: String
+        }
+    ]
 }, {
     toJSON: {
         transform(doc, ret){
