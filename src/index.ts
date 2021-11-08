@@ -19,3 +19,5 @@ export * from './events/user-updated-event';
 
 export * from './models/user';
 export * from './models/product';
+export * from './models/category';
+export * from './models/purchase';
