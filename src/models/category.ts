@@ -39,6 +39,6 @@ categorySchema.statics.build = (attrs: CategoryAttrs) => {
     return new Category(attrs);
 }
 
-const Category = mongoose.model<CategoryDoc,CategoryModel>('User', categorySchema);
+const Category = mongoose.model<CategoryDoc,CategoryModel>('Category', categorySchema);
 
 export { Category };
