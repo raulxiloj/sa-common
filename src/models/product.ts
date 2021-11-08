@@ -18,6 +18,7 @@ interface ProductDoc extends mongoose.Document {
     foto: string;
     precio: number;
     stock: number;
+    categorias: [];
 }
 
 //Interface  for the properties that a product model has
