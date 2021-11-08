@@ -12,6 +12,7 @@ interface PurchaseAttrs {
             precio: number;
         }
     ];
+    estado: number;
 }
 
 //Interface for the properties that a purchase document has
@@ -26,6 +27,7 @@ interface PurchaseDoc extends mongoose.Document {
             precio: number;
         }
     ];
+    estado: number;
 }
 
 //Interface for the properties that provider model has
@@ -55,7 +57,11 @@ const purchaseSchema = new mongoose.Schema({
             nombre: String,
             precio: Number
         }
-    ]
+    ],
+    estado: {
+        type: Number,
+        required: true
+    }
 },{
     toJSON: {
         transform(doc, ret){
@@ -72,7 +78,8 @@ purchaseSchema.statics.build = (attrs: PurchaseAttrs) => {
         nombre: attrs.nombre,
         nit: attrs.nit,
         fecha: attrs.fecha,
-        products: attrs.products
+        products: attrs.products,
+        estado: attrs.estado
     });
 }
 
